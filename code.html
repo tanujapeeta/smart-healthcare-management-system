@@ -1,0 +1,2543 @@
+Attachment main.dart added.None selected 
+
+Skip to content
+Using Gmail with screen readers
+in:sent 
+Enable desktop notifications for Gmail.
+   OK  No, thanks
+2 of 14
+(no subject)
+Inbox
+
+Tanuja Peeta <tanujapeeta@gmail.com>
+Attachments
+11:47 (2 hours ago)
+to me
+
+
+ One attachment
+  •  Scanned by Gmail
+Smart_Healthcare_Login_HomePage_Fixed (1).html
+100%
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Healthcare Management System</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0077b6;
+    --primary-dark: #023e8a;
+    --secondary: #00b4d8;
+    --light: #f2f8ff;
+    --white: #ffffff;
+    --text: #333;
+    --border: #ddd;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ff9800;
+    --shadow: 0 5px 20px rgba(0,0,0,0.10);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* DARK MODE */
+
+body.dark {
+    --light: #121212;
+    --white: #1e1e1e;
+    --text: #eeeeee;
+    --border: #444;
+    --shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+/* NAVBAR */
+
+nav {
+    background: var(--primary-dark);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 9px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: var(--secondary);
+}
+
+/* CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* FORMS */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    margin: 5px 3px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+.btn-success {
+    background: var(--success);
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+.btn-warning {
+    background: var(--warning);
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+/* CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--primary);
+}
+
+/* DOCTOR */
+
+.doctor {
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.doctor:hover {
+    box-shadow: var(--shadow);
+}
+
+.doctor-avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    float: left;
+    margin-right: 15px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* STATUS */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+}
+
+.pending {
+    background: var(--warning);
+}
+
+.accepted {
+    background: var(--success);
+}
+
+.rejected {
+    background: var(--danger);
+}
+
+.completed {
+    background: var(--primary);
+}
+
+/* DASHBOARD */
+
+.dashboard-card {
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+}
+
+.dashboard-card h2 {
+    margin: 5px;
+}
+
+/* ALERT */
+
+.alert {
+    padding: 15px;
+    border-radius: 7px;
+    margin: 10px 0;
+}
+
+.alert-info {
+    background: #d9f3ff;
+    color: #034b66;
+}
+
+.alert-danger {
+    background: #ffdede;
+    color: #8b0000;
+}
+
+/* RATING */
+
+.stars {
+    color: #ffc107;
+    font-size: 22px;
+}
+
+/* LOGIN */
+
+.auth-box {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+/* CHAT */
+
+.chat-box {
+    height: 300px;
+    border: 1px solid var(--border);
+    padding: 15px;
+    overflow-y: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 10px;
+    max-width: 75%;
+}
+
+.message.patient {
+    background: #d9f3ff;
+    margin-left: auto;
+}
+
+.message.doctor {
+    background: #e8e8e8;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--primary-dark);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 Smart Healthcare Management System</h1>
+    <p>Easy, Smart and Secure Healthcare Services</p>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav id="navbar">
+
+    <button onclick="showPage('homePage')">Home</button>
+
+    <button onclick="showPage('loginPage')">Login / Register</button>
+
+    <button onclick="showPage('doctorPage')">
+        Find Doctor
+    </button>
+
+    <button onclick="showPage('appointmentPage')">
+        Book Appointment
+    </button>
+
+    <button onclick="showPage('patientDashboard')">
+        Patient Dashboard
+    </button>
+
+    <button onclick="showPage('doctorDashboard')">
+        Doctor Dashboard
+    </button>
+
+    <button onclick="showPage('historyPage')">
+        Medical History
+    </button>
+
+    <button onclick="toggleDarkMode()">
+        🌓 Dark Mode
+    </button>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+</nav>
+
+
+<!-- HOME -->
+
+<div class="container page active" id="homePage">
+
+    <h2>Welcome to Smart Healthcare</h2>
+
+    <div class="grid">
+
+        <div class="dashboard-card">
+            <h2>👨‍⚕️</h2>
+            <h3>Find Doctors</h3>
+            <p>Search qualified doctors.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>📅</h2>
+            <h3>Appointments</h3>
+            <p>Book appointments easily.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>💊</h2>
+            <h3>Prescriptions</h3>
+            <p>Manage prescriptions online.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>📋</h2>
+            <h3>Medical History</h3>
+            <p>View your healthcare history.</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="alert alert-info">
+        <b>Tip:</b> Keep your health information updated
+        for better healthcare management.
+    </div>
+
+</div>
+
+
+<!-- LOGIN / REGISTER -->
+
+<div class="container page" id="loginPage">
+
+    <div class="auth-box">
+
+        <h2>🔐 Patient Registration</h2>
+
+        <input id="registerName"
+               type="text"
+               placeholder="Patient Name">
+
+        <input id="registerEmail"
+               type="email"
+               placeholder="Email">
+
+        <input id="registerPassword"
+               type="password"
+               placeholder="Password">
+
+        <input id="registerPhone"
+               type="tel"
+               placeholder="Phone Number">
+
+        <button onclick="registerUser()">
+            Register
+        </button>
+
+        <hr>
+
+        <h2>Login</h2>
+
+        <input id="loginEmail"
+               type="email"
+               placeholder="Email">
+
+        <input id="loginPassword"
+               type="password"
+               placeholder="Password">
+
+        <button onclick="loginUser()">
+            Login
+        </button>
+
+        <p id="authMessage"></p>
+
+    </div>
+
+</div>
+
+
+<!-- PATIENT DASHBOARD -->
+
+<div class="container page" id="patientDashboard">
+
+    <h2>👤 Patient Dashboard</h2>
+
+    <h3 id="welcomePatient">
+        Welcome, Patient!
+    </h3>
+
+    <div class="grid">
+
+        <div class="dashboard-card">
+            <h2>📅</h2>
+            <h3>Appointments</h3>
+            <h2 id="appointmentCount">0</h2>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>💊</h2>
+            <h3>Prescriptions</h3>
+            <h2 id="prescriptionCount">0</h2>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>📋</h2>
+            <h3>Medical Records</h3>
+            <h2 id="historyCount">0</h2>
+        </div>
+
+    </div>
+
+    <br>
+
+    <h3>Upcoming Appointment</h3>
+
+    <div id="upcomingAppointment">
+        No appointment booked.
+    </div>
+
+    <br>
+
+    <button onclick="showPage('doctorPage')">
+        ➕ Book Appointment
+    </button>
+
+    <button onclick="showPage('patientPrescription')">
+        💊 View Prescription
+    </button>
+
+    <button onclick="showPage('historyPage')">
+        📋 Medical History
+    </button>
+
+    <button onclick="showPage('healthPage')">
+        ❤️ Health Dashboard
+    </button>
+
+</div>
+
+
+<!-- DOCTOR SEARCH -->
+
+<div class="container page" id="doctorPage">
+
+    <h2>👨‍⚕️ Search Doctor</h2>
+
+    <input id="doctorSearch"
+           type="text"
+           placeholder="Search doctor by name..."
+           onkeyup="filterDoctors()">
+
+    <select id="specializationFilter"
+            onchange="filterDoctors()">
+
+        <option value="All">
+            All Specializations
+        </option>
+
+        <option value="Cardiologist">
+            Cardiologist
+        </option>
+
+        <option value="Dermatologist">
+            Dermatologist
+        </option>
+
+        <option value="Dentist">
+            Dentist
+        </option>
+
+        <option value="General Physician">
+            General Physician
+        </option>
+
+        <option value="Neurologist">
+            Neurologist
+        </option>
+
+    </select>
+
+    <div id="doctorList"></div>
+
+</div>
+
+
+<!-- APPOINTMENT -->
+
+<div class="container page" id="appointmentPage">
+
+    <h2>📅 Book Appointment</h2>
+
+    <div class="card">
+
+        <h3 id="selectedDoctorName">
+            No doctor selected
+        </h3>
+
+        <p id="selectedDoctorSpecialization">
+            Select a doctor first.
+        </p>
+
+    </div>
+
+    <label>Select Date</label>
+
+    <input id="appointmentDate"
+           type="date">
+
+    <label>Select Time</label>
+
+    <select id="appointmentTime">
+
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>02:00 PM</option>
+        <option>03:00 PM</option>
+        <option>04:00 PM</option>
+
+    </select>
+
+    <label>Reason for Visit</label>
+
+    <textarea id="appointmentReason"
+              rows="4"
+              placeholder="Describe your reason for consultation">
+    </textarea>
+
+    <button onclick="bookAppointment()">
+        Confirm Appointment
+    </button>
+
+    <p id="appointmentMessage"></p>
+
+</div>
+
+
+<!-- DOCTOR DASHBOARD -->
+
+<div class="container page" id="doctorDashboard">
+
+    <h2>👨‍⚕️ Doctor Dashboard</h2>
+
+    <h3>Welcome Dr. Ravi Kumar</h3>
+
+    <div class="grid">
+
+        <div class="dashboard-card">
+            <h3>New Appointments</h3>
+            <h2 id="doctorAppointmentCount">0</h2>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Patients</h3>
+            <h2>24</h2>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Prescriptions</h3>
+            <h2 id="doctorPrescriptionCount">0</h2>
+        </div>
+
+    </div>
+
+    <br>
+
+    <h3>Appointment Requests</h3>
+
+    <div id="doctorAppointments">
+        No appointment requests.
+    </div>
+
+</div>
+
+
+<!-- CONSULTATION -->
+
+<div class="container page" id="consultationPage">
+
+    <h2>🩺 Patient Consultation</h2>
+
+    <div class="card">
+
+        <h3>Patient Details</h3>
+
+        <p>
+            <b>Name:</b>
+            <span id="consultPatientName">Rahul</span>
+        </p>
+
+        <p>
+            <b>Age:</b> 25
+        </p>
+
+        <p>
+            <b>Gender:</b> Male
+        </p>
+
+    </div>
+
+    <h3>Diagnosis</h3>
+
+    <textarea id="diagnosis"
+              rows="5"
+              placeholder="Enter diagnosis">
+    </textarea>
+
+    <h3>Consultation Notes</h3>
+
+    <textarea id="consultationNotes"
+              rows="5"
+              placeholder="Enter consultation notes">
+    </textarea>
+
+    <button onclick="saveConsultation()">
+        Continue to Prescription
+    </button>
+
+</div>
+
+
+<!-- PRESCRIPTION -->
+
+<div class="container page" id="prescriptionPage">
+
+    <h2>💊 Add Prescription</h2>
+
+    <p>
+        <b>Patient:</b>
+        <span id="prescriptionPatient">
+            Rahul
+        </span>
+    </p>
+
+    <label>Diagnosis</label>
+
+    <input id="prescriptionDiagnosis"
+           type="text"
+           placeholder="Enter diagnosis">
+
+    <label>Medicine</label>
+
+    <input id="medicine"
+           type="text"
+           placeholder="Enter medicine">
+
+    <label>Dosage</label>
+
+    <input id="dosage"
+           type="text"
+           placeholder="Example: 500 mg">
+
+    <label>Frequency</label>
+
+    <select id="frequency">
+
+        <option>Once a day</option>
+        <option>Twice a day</option>
+        <option>Three times a day</option>
+        <option>Four times a day</option>
+
+    </select>
+
+    <label>Duration</label>
+
+    <input id="duration"
+           type="text"
+           placeholder="Example: 5 days">
+
+    <label>Instructions</label>
+
+    <textarea id="instructions"
+              rows="4"
+              placeholder="Enter instructions">
+    </textarea>
+
+    <button onclick="savePrescription()">
+        Save Prescription
+    </button>
+
+</div>
+
+
+<!-- PATIENT PRESCRIPTION -->
+
+<div class="container page" id="patientPrescription">
+
+    <h2>💊 My Prescription</h2>
+
+    <div id="prescriptionDisplay">
+
+        <div class="alert alert-info">
+            No prescription available yet.
+        </div>
+
+    </div>
+
+    <button onclick="printPrescription()">
+        🖨️ Print Prescription
+    </button>
+
+</div>
+
+
+<!-- MEDICAL HISTORY -->
+
+<div class="container page" id="historyPage">
+
+    <h2>📋 Medical History</h2>
+
+    <div id="historyList">
+
+        <div class="alert alert-info">
+            No medical history available.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEALTH DASHBOARD -->
+
+<div class="container page" id="healthPage">
+
+    <h2>❤️ Health Dashboard</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Weight</h3>
+
+            <input id="weight"
+                   type="number"
+                   placeholder="Weight in kg">
+
+        </div>
+
+        <div class="card">
+
+            <h3>Height</h3>
+
+            <input id="height"
+                   type="number"
+                   placeholder="Height in cm">
+
+        </div>
+
+        <div class="card">
+
+            <h3>Blood Pressure</h3>
+
+            <input id="bloodPressure"
+                   type="text"
+                   placeholder="120/80">
+
+        </div>
+
+        <div class="card">
+
+            <h3>Heart Rate</h3>
+
+            <input id="heartRate"
+                   type="number"
+                   placeholder="BPM">
+
+        </div>
+
+    </div>
+
+    <button onclick="calculateBMI()">
+        Calculate BMI
+    </button>
+
+    <h3 id="bmiResult"></h3>
+
+</div>
+
+
+<!-- NOTIFICATIONS -->
+
+<div class="container page" id="notificationPage">
+
+    <h2>🔔 Notifications</h2>
+
+    <div id="notifications">
+
+        <div class="alert alert-info">
+            No new notifications.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CHAT -->
+
+<div class="container page" id="chatPage">
+
+    <h2>💬 Doctor-Patient Chat</h2>
+
+    <div class="chat-box" id="chatBox">
+
+        <div class="message doctor">
+            Hello! How can I help you?
+        </div>
+
+    </div>
+
+    <input id="chatMessage"
+           type="text"
+           placeholder="Type your message...">
+
+    <button onclick="sendMessage()">
+        Send
+    </button>
+
+</div>
+
+
+<!-- EMERGENCY -->
+
+<div class="container page" id="emergencyPage">
+
+    <h2>🚨 Emergency Services</h2>
+
+    <div class="alert alert-danger">
+
+        <h3>Emergency?</h3>
+
+        <p>
+            If you are experiencing a life-threatening
+            emergency, contact your local emergency
+            medical services immediately.
+        </p>
+
+        <button class="btn-danger"
+                onclick="alert('Please contact your local emergency service immediately.')">
+
+            🚨 Emergency Help
+
+        </button>
+
+    </div>
+
+    <h3>Emergency Contacts</h3>
+
+    <div class="card">
+
+        <p>🚑 Ambulance: Emergency Services</p>
+        <p>🏥 Nearest Hospital: Contact local hospital</p>
+        <p>👨‍👩‍👦 Emergency Contact: Your registered contact</p>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Smart Healthcare Management System
+    </p>
+
+    <p>
+        Healthcare technology project
+    </p>
+
+</footer>
+
+
+<script>
+
+/* ================================
+   DATA
+================================ */
+
+const doctors = [
+
+    {
+        id: 1,
+        name: "Dr. Ravi Kumar",
+        specialization: "Cardiologist",
+        experience: "10 Years",
+        availability: "Monday - Friday",
+        rating: 4.8
+    },
+
+    {
+        id: 2,
+        name: "Dr. Priya Sharma",
+        specialization: "Dermatologist",
+        experience: "7 Years",
+        availability: "Monday - Saturday",
+        rating: 4.7
+    },
+
+    {
+        id: 3,
+        name: "Dr. Arjun Rao",
+        specialization: "Dentist",
+        experience: "8 Years",
+        availability: "Monday - Friday",
+        rating: 4.6
+    },
+
+    {
+        id: 4,
+        name: "Dr. Sneha Reddy",
+        specialization: "General Physician",
+        experience: "12 Years",
+        availability: "Monday - Saturday",
+        rating: 4.9
+    },
+
+    {
+        id: 5,
+        name: "Dr. Kiran Patel",
+        specialization: "Neurologist",
+        experience: "9 Years",
+        availability: "Tuesday - Saturday",
+        rating: 4.8
+    }
+
+];
+
+
+/* ================================
+   LOCAL STORAGE
+================================ */
+
+let appointments =
+    JSON.parse(localStorage.getItem("appointments")) || [];
+
+let prescriptions =
+    JSON.parse(localStorage.getItem("prescriptions")) || [];
+
+let history =
+    JSON.parse(localStorage.getItem("history")) || [];
+
+let users =
+    JSON.parse(localStorage.getItem("users")) || [];
+
+let notifications =
+    JSON.parse(localStorage.getItem("notifications")) || [];
+
+let selectedDoctor = null;
+
+
+/* ================================
+   PAGE NAVIGATION
+================================ */
+
+function showPage(pageId) {
+
+    // Do not allow dashboard pages to remain accessible after logout.
+    const protectedPages = ["patientDashboard", "doctorDashboard", "historyPage", "patientPrescription", "notificationPage"];
+    const currentUser = localStorage.getItem("currentUser");
+
+    if (protectedPages.includes(pageId) && !currentUser) {
+        pageId = "loginPage";
+    }
+
+    document.querySelectorAll(".page")
+        .forEach(page => {
+            page.classList.remove("active");
+        });
+
+    const page = document.getElementById(pageId);
+
+    if (page) {
+        page.classList.add("active");
+    }
+
+    if (pageId === "doctorPage") {
+        displayDoctors();
+    }
+
+    if (pageId === "patientDashboard") {
+        updatePatientDashboard();
+    }
+
+    if (pageId === "doctorDashboard") {
+        updateDoctorDashboard();
+    }
+
+    if (pageId === "patientPrescription") {
+        displayPrescription();
+    }
+
+    if (pageId === "historyPage") {
+        displayHistory();
+    }
+
+    if (pageId === "notificationPage") {
+        displayNotifications();
+    }
+}
+
+
+/* ================================
+   REGISTRATION
+================================ */
+
+function registerUser() {
+
+    const name =
+        document.getElementById("registerName").value.trim();
+
+    const email =
+        document.getElementById("registerEmail").value.trim();
+
+    const password =
+        document.getElementById("registerPassword").value;
+
+    const phone =
+        document.getElementById("registerPhone").value.trim();
+
+    const message =
+        document.getElementById("authMessage");
+
+
+    if (!name || !email || !password || !phone) {
+
+        message.innerHTML =
+            '<span style="color:red">Please fill all fields.</span>';
+
+        return;
+    }
+
+
+    const existing =
+        users.find(user => user.email === email);
+
+
+    if (existing) {
+
+        message.innerHTML =
+            '<span style="color:red">Email already registered.</span>';
+
+        return;
+    }
+
+
+    users.push({
+        name,
+        email,
+        password,
+        phone
+    });
+
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+
+    message.innerHTML =
+        '<span style="color:green">Registration successful! You can now login.</span>';
+
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+function loginUser() {
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+    const message =
+        document.getElementById("authMessage");
+
+
+    const user =
+        users.find(
+            u =>
+                u.email === email &&
+                u.password === password
+        );
+
+
+    if (!user) {
+
+        message.innerHTML =
+            '<span style="color:red">Invalid email or password.</span>';
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(user)
+    );
+
+
+    message.innerHTML =
+        '<span style="color:green">Login successful!</span>';
+
+
+    setTimeout(() => {
+
+        // After a successful login, open the Home page.
+        showPage("homePage");
+
+    }, 500);
+
+}
+
+
+/* ================================
+   LOGOUT
+================================ */
+
+function logout() {
+
+    // End the current session and close the dashboard view.
+    localStorage.removeItem("currentUser");
+
+    // Clear the password field so it is not left on screen.
+    const passwordField = document.getElementById("loginPassword");
+    if (passwordField) passwordField.value = "";
+
+    // Hide every page and show the login/register screen.
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    const loginPage = document.getElementById("loginPage");
+    if (loginPage) loginPage.classList.add("active");
+
+    alert("You have been logged out.");
+}
+
+
+/* ================================
+   DOCTOR DISPLAY
+================================ */
+
+function displayDoctors(list = doctors) {
+
+    const doctorList =
+        document.getElementById("doctorList");
+
+    doctorList.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        doctorList.innerHTML =
+            '<div class="alert alert-info">No doctors found.</div>';
+
+        return;
+    }
+
+
+    list.forEach(doctor => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "doctor";
+
+        div.innerHTML = `
+
+            <div class="doctor-avatar">
+                ${doctor.name.charAt(4)}
+            </div>
+
+            <h3>${doctor.name}</h3>
+
+            <p>
+                <b>Specialization:</b>
+                ${doctor.specialization}
+            </p>
+
+            <p>
+                <b>Experience:</b>
+                ${doctor.experience}
+            </p>
+
+            <p>
+                <b>Available:</b>
+                ${doctor.availability}
+            </p>
+
+            <p class="stars">
+                ⭐ ${doctor.rating}
+            </p>
+
+            <button
+                onclick="selectDoctor(${doctor.id})">
+                Select Doctor
+            </button>
+
+            <button
+                class="btn-secondary"
+                onclick="rateDoctor('${doctor.name}')">
+                ⭐ Rate Doctor
+            </button>
+
+            <div class="clear"></div>
+        `;
+
+        doctorList.appendChild(div);
+
+    });
+
+}
+
+
+/* ================================
+   SEARCH DOCTORS
+================================ */
+
+function filterDoctors() {
+
+    const search =
+        document.getElementById("doctorSearch")
+        .value
+        .toLowerCase();
+
+    const specialization =
+        document.getElementById("specializationFilter")
+        .value;
+
+
+    const filtered =
+        doctors.filter(doctor => {
+
+            const nameMatch =
+                doctor.name
+                .toLowerCase()
+                .includes(search);
+
+            const specializationMatch =
+                specialization === "All" ||
+                doctor.specialization === specialization;
+
+            return nameMatch &&
+                   specializationMatch;
+
+        });
+
+
+    displayDoctors(filtered);
+}
+
+
+/* ================================
+   SELECT DOCTOR
+================================ */
+
+function selectDoctor(id) {
+
+    selectedDoctor =
+        doctors.find(doctor => doctor.id === id);
+
+
+    document.getElementById(
+        "selectedDoctorName"
+    ).textContent =
+        selectedDoctor.name;
+
+
+    document.getElementById(
+        "selectedDoctorSpecialization"
+    ).textContent =
+        selectedDoctor.specialization;
+
+
+    showPage("appointmentPage");
+
+}
+
+
+/* ================================
+   BOOK APPOINTMENT
+================================ */
+
+function bookAppointment() {
+
+    if (!selectedDoctor) {
+
+        alert("Please select a doctor first.");
+
+        showPage("doctorPage");
+
+        return;
+    }
+
+
+    const date =
+        document.getElementById(
+            "appointmentDate"
+        ).value;
+
+    const time =
+        document.getElementById(
+            "appointmentTime"
+        ).value;
+
+    const reason =
+        document.getElementById(
+            "appointmentReason"
+        ).value.trim();
+
+
+    if (!date) {
+
+        alert("Please select an appointment date.");
+
+        return;
+    }
+
+
+    const user =
+        JSON.parse(
+            localStorage.getItem("currentUser")
+        );
+
+
+    const patientName =
+        user ? user.name : "Rahul";
+
+
+    const appointment = {
+
+        id: Date.now(),
+
+        patient:
+            patientName,
+
+        doctor:
+            selectedDoctor.name,
+
+        specialization:
+            selectedDoctor.specialization,
+
+        date,
+
+        time,
+
+        reason,
+
+        status:
+            "Pending"
+
+    };
+
+
+    appointments.push(appointment);
+
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+
+    notifications.push({
+
+        message:
+            `Appointment booked with ${selectedDoctor.name} on ${date}.`,
+
+        date:
+            new Date().toLocaleString()
+
+    });
+
+
+    localStorage.setItem(
+        "notifications",
+        JSON.stringify(notifications)
+    );
+
+
+    document.getElementById(
+        "appointmentMessage"
+    ).innerHTML =
+        '<div class="alert alert-info">Appointment booked successfully!</div>';
+
+
+    updatePatientDashboard();
+
+}
+
+
+/* ================================
+   PATIENT DASHBOARD
+================================ */
+
+function updatePatientDashboard() {
+
+    const user =
+        JSON.parse(
+            localStorage.getItem("currentUser")
+        );
+
+
+    if (user) {
+
+        document.getElementById(
+            "welcomePatient"
+        ).textContent =
+            `Welcome, ${user.name}!`;
+
+    }
+
+
+    document.getElementById(
+        "appointmentCount"
+    ).textContent =
+        appointments.length;
+
+
+    document.getElementById(
+        "prescriptionCount"
+    ).textContent =
+        prescriptions.length;
+
+
+    document.getElementById(
+        "historyCount"
+    ).textContent =
+        history.length;
+
+
+    const upcoming =
+        document.getElementById(
+            "upcomingAppointment"
+        );
+
+
+    if (appointments.length === 0) {
+
+        upcoming.innerHTML =
+            '<div class="alert alert-info">No appointment booked.</div>';
+
+        return;
+    }
+
+
+    const appointment =
+        appointments[appointments.length - 1];
+
+
+    upcoming.innerHTML = `
+
+        <div class="card">
+
+            <h3>${appointment.doctor}</h3>
+
+            <p>
+                <b>Date:</b>
+                ${appointment.date}
+            </p>
+
+            <p>
+                <b>Time:</b>
+                ${appointment.time}
+            </p>
+
+            <p>
+                <b>Reason:</b>
+                ${appointment.reason || "General consultation"}
+            </p>
+
+            <p>
+                <b>Status:</b>
+                <span class="status pending">
+                    ${appointment.status}
+                </span>
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ================================
+   DOCTOR DASHBOARD
+================================ */
+
+function updateDoctorDashboard() {
+
+    document.getElementById(
+        "doctorAppointmentCount"
+    ).textContent =
+        appointments.length;
+
+
+    document.getElementById(
+        "doctorPrescriptionCount"
+    ).textContent =
+        prescriptions.length;
+
+
+    const container =
+        document.getElementById(
+            "doctorAppointments"
+        );
+
+
+    if (appointments.length === 0) {
+
+        container.innerHTML =
+            '<div class="alert alert-info">No appointment requests.</div>';
+
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    appointments.forEach(appointment => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "card";
+
+        div.innerHTML = `
+
+            <h3>
+                ${appointment.patient}
+            </h3>
+
+            <p>
+                <b>Doctor:</b>
+                ${appointment.doctor}
+            </p>
+
+            <p>
+                <b>Date:</b>
+                ${appointment.date}
+            </p>
+
+            <p>
+                <b>Time:</b>
+                ${appointment.time}
+            </p>
+
+            <p>
+                <b>Reason:</b>
+                ${appointment.reason || "Not specified"}
+            </p>
+
+            <p>
+                <b>Status:</b>
+                <span class="status ${appointment.status.toLowerCase()}">
+                    ${appointment.status}
+                </span>
+            </p>
+
+            ${
+                appointment.status === "Pending"
+                ?
+                `
+                <button
+                    class="btn-success"
+                    onclick="acceptAppointment(${appointment.id})">
+                    Accept
+                </button>
+
+                <button
+                    class="btn-danger"
+                    onclick="rejectAppointment(${appointment.id})">
+                    Reject
+                </button>
+                `
+                :
+                ""
+            }
+
+            ${
+                appointment.status === "Accepted"
+                ?
+                `
+                <button
+                    onclick="openConsultation('${appointment.patient}')">
+                    Start Consultation
+                </button>
+                `
+                :
+                ""
+            }
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+/* ================================
+   ACCEPT APPOINTMENT
+================================ */
+
+function acceptAppointment(id) {
+
+    const appointment =
+        appointments.find(
+            a => a.id === id
+        );
+
+
+    if (appointment) {
+
+        appointment.status =
+            "Accepted";
+
+
+        localStorage.setItem(
+            "appointments",
+            JSON.stringify(appointments)
+        );
+
+
+        notifications.push({
+
+            message:
+                `Appointment with ${appointment.doctor} was accepted.`,
+
+            date:
+                new Date().toLocaleString()
+
+        });
+
+
+        localStorage.setItem(
+            "notifications",
+            JSON.stringify(notifications)
+        );
+
+    }
+
+
+    updateDoctorDashboard();
+
+}
+
+
+/* ================================
+   REJECT APPOINTMENT
+================================ */
+
+function rejectAppointment(id) {
+
+    const appointment =
+        appointments.find(
+            a => a.id === id
+        );
+
+
+    if (appointment) {
+
+        appointment.status =
+            "Rejected";
+
+
+        localStorage.setItem(
+            "appointments",
+            JSON.stringify(appointments)
+        );
+
+    }
+
+
+    updateDoctorDashboard();
+
+}
+
+
+/* ================================
+   CONSULTATION
+================================ */
+
+function openConsultation(patientName) {
+
+    document.getElementById(
+        "consultPatientName"
+    ).textContent =
+        patientName;
+
+
+    document.getElementById(
+        "prescriptionPatient"
+    ).textContent =
+        patientName;
+
+
+    showPage("consultationPage");
+
+}
+
+
+function saveConsultation() {
+
+    const diagnosis =
+        document.getElementById(
+            "diagnosis"
+        ).value.trim();
+
+    const notes =
+        document.getElementById(
+            "consultationNotes"
+        ).value.trim();
+
+
+    if (!diagnosis) {
+
+        alert("Please enter diagnosis.");
+
+        return;
+    }
+
+
+    history.push({
+
+        diagnosis,
+
+        notes,
+
+        date:
+            new Date().toLocaleDateString(),
+
+        doctor:
+            "Dr. Ravi Kumar"
+
+    });
+
+
+    localStorage.setItem(
+        "history",
+        JSON.stringify(history)
+    );
+
+
+    document.getElementById(
+        "prescriptionDiagnosis"
+    ).value =
+        diagnosis;
+
+
+    showPage("prescriptionPage");
+
+}
+
+
+/* ================================
+   SAVE PRESCRIPTION
+================================ */
+
+function savePrescription() {
+
+    const diagnosis =
+        document.getElementById(
+            "prescriptionDiagnosis"
+        ).value.trim();
+
+    const medicine =
+        document.getElementById(
+            "medicine"
+        ).value.trim();
+
+    const dosage =
+        document.getElementById(
+            "dosage"
+        ).value.trim();
+
+    const frequency =
+        document.getElementById(
+            "frequency"
+        ).value;
+
+    const duration =
+        document.getElementById(
+            "duration"
+        ).value.trim();
+
+    const instructions =
+        document.getElementById(
+            "instructions"
+        ).value.trim();
+
+
+    if (!diagnosis || !medicine || !dosage) {
+
+        alert(
+            "Please enter diagnosis, medicine and dosage."
+        );
+
+        return;
+    }
+
+
+    const user =
+        JSON.parse(
+            localStorage.getItem("currentUser")
+        );
+
+
+    const prescription = {
+
+        patient:
+            user ? user.name : "Rahul",
+
+        doctor:
+            "Dr. Ravi Kumar",
+
+        date:
+            new Date().toLocaleDateString(),
+
+        diagnosis,
+
+        medicine,
+
+        dosage,
+
+        frequency,
+
+        duration,
+
+        instructions
+
+    };
+
+
+    prescriptions.push(
+        prescription
+    );
+
+
+    localStorage.setItem(
+        "prescriptions",
+        JSON.stringify(prescriptions)
+    );
+
+
+    notifications.push({
+
+        message:
+            "A new prescription has been added.",
+
+        date:
+            new Date().toLocaleString()
+
+    });
+
+
+    localStorage.setItem(
+        "notifications",
+        JSON.stringify(notifications)
+    );
+
+
+    alert(
+        "Prescription saved successfully!"
+    );
+
+
+    displayPrescription();
+
+    showPage("patientPrescription");
+
+}
+
+
+/* ================================
+   DISPLAY PRESCRIPTION
+================================ */
+
+function displayPrescription() {
+
+    const display =
+        document.getElementById(
+            "prescriptionDisplay"
+        );
+
+
+    if (prescriptions.length === 0) {
+
+        display.innerHTML =
+            '<div class="alert alert-info">No prescription available yet.</div>';
+
+        return;
+    }
+
+
+    const p =
+        prescriptions[prescriptions.length - 1];
+
+
+    display.innerHTML = `
+
+        <div class="card" id="printArea">
+
+            <h2 style="text-align:center">
+                🏥 MEDICAL PRESCRIPTION
+            </h2>
+
+            <hr>
+
+            <p>
+                <b>Patient:</b>
+                ${p.patient}
+            </p>
+
+            <p>
+                <b>Doctor:</b>
+                ${p.doctor}
+            </p>
+
+            <p>
+                <b>Date:</b>
+                ${p.date}
+            </p>
+
+            <hr>
+
+            <h3>Diagnosis</h3>
+
+            <p>${p.diagnosis}</p>
+
+            <h3>Medicine</h3>
+
+            <p>${p.medicine}</p>
+
+            <h3>Dosage</h3>
+
+            <p>${p.dosage}</p>
+
+            <h3>Frequency</h3>
+
+            <p>${p.frequency}</p>
+
+            <h3>Duration</h3>
+
+            <p>${p.duration}</p>
+
+            <h3>Instructions</h3>
+
+            <p>${p.instructions}</p>
+
+            <hr>
+
+            <p>
+                <b>Doctor Signature:</b>
+                Dr. Ravi Kumar
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ================================
+   PRINT PRESCRIPTION
+================================ */
+
+function printPrescription() {
+
+    const content =
+        document.getElementById(
+            "printArea"
+        );
+
+
+    if (!content) {
+
+        alert("No prescription available.");
+
+        return;
+    }
+
+
+    const printWindow =
+        window.open(
+            "",
+            "",
+            "width=800,height=700"
+        );
+
+
+    printWindow.document.write(`
+
+        <html>
+
+        <head>
+
+            <title>Prescription</title>
+
+            <style>
+
+                body {
+                    font-family: Arial;
+                    padding: 40px;
+                }
+
+                h2 {
+                    text-align: center;
+                    color: #0077b6;
+                }
+
+                hr {
+                    margin: 20px 0;
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            ${content.innerHTML}
+
+        </body>
+
+        </html>
+
+    `);
+
+
+    printWindow.document.close();
+
+    printWindow.print();
+
+}
+
+
+/* ================================
+   MEDICAL HISTORY
+================================ */
+
+function displayHistory() {
+
+    const list =
+        document.getElementById(
+            "historyList"
+        );
+
+
+    if (history.length === 0) {
+
+        list.innerHTML =
+            '<div class="alert alert-info">No medical history available.</div>';
+
+        return;
+    }
+
+
+    list.innerHTML = "";
+
+
+    history.forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "card";
+
+
+        div.innerHTML = `
+
+            <h3>
+                🩺 ${item.diagnosis}
+            </h3>
+
+            <p>
+                <b>Date:</b>
+                ${item.date}
+            </p>
+
+            <p>
+                <b>Doctor:</b>
+                ${item.doctor}
+            </p>
+
+            <p>
+                <b>Consultation Notes:</b>
+                ${item.notes || "No notes"}
+            </p>
+
+        `;
+
+
+        list.appendChild(div);
+
+    });
+
+}
+
+
+/* ================================
+   BMI
+================================ */
+
+function calculateBMI() {
+
+    const weight =
+        parseFloat(
+            document.getElementById(
+                "weight"
+            ).value
+        );
+
+    const height =
+        parseFloat(
+            document.getElementById(
+                "height"
+            ).value
+        );
+
+
+    if (!weight || !height) {
+
+        alert(
+            "Please enter weight and height."
+        );
+
+        return;
+    }
+
+
+    const heightMeters =
+        height / 100;
+
+
+    const bmi =
+        weight /
+        (heightMeters * heightMeters);
+
+
+    let category;
+
+
+    if (bmi < 18.5) {
+
+        category = "Underweight";
+
+    } else if (bmi < 25) {
+
+        category = "Normal weight";
+
+    } else if (bmi < 30) {
+
+        category = "Overweight";
+
+    } else {
+
+        category = "Obesity";
+
+    }
+
+
+    document.getElementById(
+        "bmiResult"
+    ).innerHTML =
+        `Your BMI is <b>${bmi.toFixed(1)}</b> — ${category}`;
+
+}
+
+
+/* ================================
+   NOTIFICATIONS
+================================ */
+
+function displayNotifications() {
+
+    const container =
+        document.getElementById(
+            "notifications"
+        );
+
+
+    if (notifications.length === 0) {
+
+        container.innerHTML =
+            '<div class="alert alert-info">No new notifications.</div>';
+
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    notifications
+        .slice()
+        .reverse()
+        .forEach(notification => {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "alert alert-info";
+
+            div.innerHTML = `
+
+                🔔 ${notification.message}
+
+                <small>
+                    ${notification.date}
+                </small>
+
+            `;
+
+            container.appendChild(div);
+
+        });
+
+}
+
+
+/* ================================
+   CHAT
+================================ */
+
+function sendMessage() {
+
+    const input =
+        document.getElementById(
+            "chatMessage"
+        );
+
+    const message =
+        input.value.trim();
+
+
+    if (!message) return;
+
+
+    const chat =
+        document.getElementById(
+            "chatBox"
+        );
+
+
+    const userMessage =
+        document.createElement("div");
+
+    userMessage.className =
+        "message patient";
+
+    userMessage.textContent =
+        message;
+
+
+    chat.appendChild(
+        userMessage
+    );
+
+
+    input.value = "";
+
+
+    setTimeout(() => {
+
+        const doctorMessage =
+            document.createElement("div");
+
+        doctorMessage.className =
+            "message doctor";
+
+        doctorMessage.textContent =
+            "Thank you for your message. The doctor will respond shortly.";
+
+        chat.appendChild(
+            doctorMessage
+        );
+
+
+        chat.scrollTop =
+            chat.scrollHeight;
+
+    }, 700);
+
+}
+
+
+/* ================================
+   DOCTOR RATING
+================================ */
+
+function rateDoctor(name) {
+
+    const rating =
+        prompt(
+            `Rate ${name} from 1 to 5:`
+        );
+
+
+    if (!rating) return;
+
+
+    const number =
+        Number(rating);
+
+
+    if (
+        number < 1 ||
+        number > 5 ||
+        isNaN(number)
+    ) {
+
+        alert(
+            "Please enter a rating between 1 and 5."
+        );
+
+        return;
+    }
+
+
+    alert(
+        `Thank you! You rated ${name} ${number}/5.`
+    );
+
+}
+
+
+/* ================================
+   DARK MODE
+================================ */
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+
+    const darkMode =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+    localStorage.setItem(
+        "darkMode",
+        darkMode
+    );
+
+}
+
+
+/* ================================
+   INITIALIZATION
+================================ */
+
+function initialize() {
+
+    const darkMode =
+        localStorage.getItem(
+            "darkMode"
+        );
+
+
+    if (darkMode === "true") {
+
+        document.body.classList.add(
+            "dark"
+        );
+
+    }
+
+
+    displayDoctors();
+
+}
+
+
+/* START */
+
+initialize();
+
+</script>
+
+</body>
+</html>
+Displaying Smart_Healthcare_Login_HomePage_Fixed (1).html.
